@@ -3,7 +3,7 @@
  * 想加题或改题，直接编辑下面的数组即可。
  * 字段说明：id 唯一编号 / category 分类 / question 题目 / answer 答案 / note 小知识
  */
-window.STREET_QUESTIONS = [
+globalThis.STREET_QUESTIONS = [
   {
     id: "q01",
     category: "生活常识",
