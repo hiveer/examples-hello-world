@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="街头问答：50 道随机知识题，先凭直觉作答，再揭晓答案。一轮之内不重复。">
+  <meta name="theme-color" content="#f3ecdd">
+  <title>街头问答 · STREET QUIZ</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffd52e'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Arial Black,Arial' font-size='42' font-weight='900' fill='%23161310'%3E%3F%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#quiz-card">跳到题目</a>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>走过路过，不要错过</span><b>✦</b>
+      <span>凭直觉作答，靠知识通关</span><b>✦</b>
+      <span>50 道街头随机题</span><b>✦</b>
+      <span>答错不亏，答对血赚</span><b>✦</b>
+      <span>走过路过，不要错过</span><b>✦</b>
+      <span>凭直觉作答，靠知识通关</span><b>✦</b>
+      <span>50 道街头随机题</span><b>✦</b>
+      <span>答错不亏，答对血赚</span><b>✦</b>
+    </div>
+  </div>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="街头问答首页">
+        <span class="brand-badge" aria-hidden="true">?</span>
+        <span class="brand-copy">
+          <strong>STREET QUIZ</strong>
+          <small>街角随机问答</small>
+        </span>
+      </a>
+      <div class="topbar-right">
+        <span class="issue">VOL. 01 / 2026</span>
+        <span class="topbar-rule" aria-hidden="true"></span>
+        <span class="count-badge"><i aria-hidden="true"></i><span id="total-count">50</span>&nbsp;道题</span>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="kicker"><span aria-hidden="true"></span>街头随机抽查</p>
+        <h1 id="page-title">
+          街头<br>
+          <span class="title-accent">问答</span><span class="title-mark" aria-hidden="true">?</span>
+        </h1>
+        <p class="intro-copy">随机抽一道题，先凭直觉作答。<br>点开答案，看看你的知识储备有多“街”。</p>
+
+        <div class="stats" aria-label="游戏信息">
+          <div class="stat">
+            <strong id="intro-total">50</strong>
+            <span>道随机题</span>
+          </div>
+          <div class="stat-rule" aria-hidden="true"></div>
+          <div class="stat">
+            <strong id="revealed-count">00</strong>
+            <span>题已揭晓</span>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <span class="tip-spark" aria-hidden="true">✦</span>
+          <div>
+            <strong>答题提示</strong>
+            <p>先别搜手机，凭第一反应答。答错不亏，答对血赚。</p>
+          </div>
+        </div>
+
+        <svg class="intro-doodle" viewBox="0 0 120 70" aria-hidden="true">
+          <path d="M5 55C34 15 74 7 108 33" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M95 19l14 14-18 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </section>
+
+      <section class="game" aria-label="答题区">
+        <span class="vertical-note" aria-hidden="true">NO PEEKING · 先猜再看</span>
+
+        <article class="quiz-card" id="quiz-card" tabindex="-1" aria-labelledby="question-text">
+          <span class="tape" aria-hidden="true"></span>
+
+          <header class="card-head">
+            <span class="category" id="category">生活常识</span>
+            <div class="card-meta">
+              <span class="random-label"><i aria-hidden="true"></i>随机出题</span>
+              <span class="question-counter" id="question-counter">01 / 50</span>
+            </div>
+          </header>
+
+          <div class="progress-track" aria-hidden="true">
+            <span id="progress-fill"></span>
+          </div>
+
+          <div class="question-block">
+            <div class="question-label" aria-hidden="true">
+              <span>QUESTION</span>
+              <span class="question-line"></span>
+              <span id="question-no">NO. 01</span>
+            </div>
+            <h2 class="question-text" id="question-text" aria-live="polite" aria-atomic="true">
+              一天中，物体的影子通常什么时候最短？
+            </h2>
+          </div>
+
+          <div class="answer-separator" aria-hidden="true">
+            <span></span><b>ANSWER</b><span></span>
+          </div>
+
+          <div class="answer-panel" id="answer-panel" aria-hidden="true">
+            <div class="answer-inner">
+              <div class="answer-head">
+                <span class="answer-letter" aria-hidden="true">A</span>
+                <span>参考答案</span>
+                <span class="answer-spark" aria-hidden="true">✦</span>
+              </div>
+              <p class="answer-text" id="answer-text"></p>
+              <p class="answer-note"><span>小知识</span><span id="answer-note"></span></p>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" id="reveal-btn" type="button" aria-expanded="false" aria-controls="answer-panel">
+              <span class="btn-icon" id="reveal-icon" aria-hidden="true">↓</span>
+              <span id="reveal-label">查看答案</span>
+            </button>
+            <button class="btn btn-secondary" id="next-btn" type="button">
+              <span>下一题</span><span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <p class="shortcut-hint">
+            <kbd>空格</kbd> 看答案 <span aria-hidden="true">·</span> <kbd>N</kbd> 下一题
+          </p>
+        </article>
+
+        <div class="round-stamp" aria-hidden="true">
+          <svg class="stamp-ring" viewBox="0 0 120 120">
+            <defs>
+              <path id="stamp-path" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/>
+            </defs>
+            <text>
+              <textPath href="#stamp-path">RANDOM · NO REPEAT · STREET QUIZ · </textPath>
+            </text>
+          </svg>
+          <span class="stamp-center">!</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>STREET QUIZ <span aria-hidden="true">©</span> 2026</p>
+      <p>随机洗牌 · 一轮不重复 · 共 <span id="footer-total">50</span> 题</p>
+      <p class="footer-quote">灵感来自街角，答案来自好奇心</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
